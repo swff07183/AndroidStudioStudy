@@ -1,6 +1,6 @@
 ### 리싸이클러뷰(RecyclerView)
 
-**RecyclerView** 위젯은 ListView가 더 진보하고 유연해진 버전입니다. [-안드로이드 공식문서](https://developer.android.com/guide/topics/ui/layout/recyclerview?hl=ko)
+> **RecyclerView** 위젯은 ListView가 더 진보하고 유연해진 버전입니다. [-안드로이드 공식문서](https://developer.android.com/guide/topics/ui/layout/recyclerview?hl=ko)
 
 휴대폰을 사용하다 보면, 메일함이나 배달앱, 플레이스토어 등등 여러 항목들을 **리스트** 형태로 나열한 화면의 앱들을 많이 볼수있다. 터치를 이용하는 모바일 기기의 특성 상 사용자가 쉽고 직관적으로 여러 항목을 보고 선택해야 하기 때문이다.
 
