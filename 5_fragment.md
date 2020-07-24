@@ -148,3 +148,15 @@ Fragment1, Fragment2 객체를 생성해주고, 처음에는 `fragment_container
 그다음 버튼 onClickListener를 통해 버튼을 눌렀을때 다른 `fragment`로 바뀌게 만들어준다.
 
 ![](./img/5_5.png)
+
+<br><br>
+
+### 프래그먼트 간 화면 전환하기
+
+예를들어 프래그먼트A -> 프래그먼트B 로 화면을 전환해야 할때, `replace`를 사용하게 된다. 이때, 프래그먼트B에서 뒤로가기 버튼을 누르게 되면 프래그먼트 A로 돌아가는것이 아닌, 어플리케이션이 종료가 된다.
+
+프래그먼트B에서 뒤로가기 버튼을 눌렀을때 종료가 아닌 프래그먼트A로 돌아가고 싶다면 다음과 같이 `.addToBackStack(null)`을 추가해주면 된다.
+
+```java
+getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentB).addToBackStack(null).commit();
+```
