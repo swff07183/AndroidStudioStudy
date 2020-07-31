@@ -25,3 +25,49 @@ Android 앱에 Firebase 추가 화면이 뜨면 내가 만든 Android 패키지 
 
 그다음 어플리케이션에 인터넷 사용권한을 부여해야 한다.
 <br>`AndroidManifest.xml`에 `<uses-permission android:name="android.permission.INTERNET" />` 코드를 추가해준다.
+<br><br>
+
+그다음 개발->Database 탭으로 들어가서 `Realtime Database`를 생성한다.  
+![](./img/firebase/8.png)
+
+
+데이터베이스를 생성한 후, 규칙탭에서 규칙을 수정할 수 있는데, 테스트를 위해서 읽기와 쓰기를 모두 허용시킨다. 
+![](./img/firebase/9.png)
+
+
+이제 어플리케이션에서 데이터가 잘 전송되는지 확인한다. `activity_main.xml` 파일에 `EditText`와 `Button` 하나를 추가한 후, `MainActivity.java`파일에 코드를 작성한다.
+
+ ```java
+public class MainActivity extends AppCompatActivity {
+    EditText editText;
+    Button button;
+
+    String text;
+
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editText = findViewById(R.id.editText);
+        button = findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                text = editText.getText().toString();
+                databaseReference.child("message").push().setValue(text); // EditText에 입력된 데이터 전송
+            }
+        });
+    }
+}
+```
+
+앱을 실행하고 텍스트를 입력하고 전송버튼을 누르면 데이터가 전송이 된다.
+![](./img/firebase/10.png)
+
+![](./img/firebase/11.png)
+
