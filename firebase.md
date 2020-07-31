@@ -67,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 앱을 실행하고 텍스트를 입력하고 전송버튼을 누르면 데이터가 전송이 된다.
-![](./img/firebase/10.png)
+
+<img src="/img/firebase/10.png" height="50%" width="50%">
 
 ![](./img/firebase/11.png)
+
 
